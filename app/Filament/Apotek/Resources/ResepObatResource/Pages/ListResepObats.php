@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Apotek\Resources\ObatResource\Pages;
+namespace App\Filament\Apotek\Resources\ResepObatResource\Pages;
 
-use App\Filament\Apotek\Resources\ObatResource;
+use App\Filament\Apotek\Resources\ResepObatResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListObats extends ListRecords
+class ListResepObats extends ListRecords
 {
-    protected static string $resource = ObatResource::class;
+    protected static string $resource = ResepObatResource::class;
 
     protected function getHeaderActions(): array
     {

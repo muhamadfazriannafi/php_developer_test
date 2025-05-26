@@ -2,10 +2,14 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Apotek\Resources\ObatResource;
+use App\Filament\Apotek\Resources\ResepObatResource;
 use App\Filament\Dokter\Resources\TindakanPasienResource;
 use App\Filament\Perawat\Resources\VitalSignResource;
 use App\Filament\Resources\PasienDaftarResource;
 use App\Filament\Resources\PasienResource;
+use App\Filament\Superadmin\Resources\HasilPemeriksaanResource;
+use App\Models\ResepObat;
 use App\Models\VitalSign;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -49,6 +53,9 @@ class SuperadminPanelProvider extends PanelProvider
                 PasienDaftarResource::class,
                 VitalSignResource::class,
                 TindakanPasienResource::class,
+                ObatResource::class,
+                ResepObatResource::class,
+                HasilPemeriksaanResource::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Superadmin/Widgets'), for: 'App\\Filament\\Superadmin\\Widgets')
             ->widgets([
