@@ -22,7 +22,27 @@ class DatabaseSeeder extends Seeder
         // user pendafatran factory
         User::factory()->create([
             'name' => 'Pendaftaran',
-            'email' => 'pendaftaran@gmail.com',
+            'email' => 'pendaftaran_satu@pendaftaran.com',
+        ]);
+        // user perawat factory
+        User::factory()->create([
+            'name' => 'Perawat',
+            'email' => 'perawat_satu@perawat.com',
+        ]);
+        // user dokter factory
+        User::factory()->create([
+            'name' => 'Dokter',
+            'email' => 'dokter_satu@dokter.com',
+        ]);
+        // user apoteker factory
+        User::factory()->create([
+            'name' => 'Apoteker',
+            'email' => 'apoteker_satu@apoteker.com',
+        ]);
+        // user superadmin factory
+        User::factory()->create([
+            'name' => 'Superadmin',
+            'email' => 'superadmin@superadmin.com',
         ]);
         $this->call([
             PasienSeeder::class,
