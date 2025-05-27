@@ -6,6 +6,12 @@ use App\Filament\Resources\PasienDaftarResource\Pages;
 use App\Filament\Resources\PasienDaftarResource\RelationManagers;
 use App\Models\Pasien;
 use App\Models\PasienDaftar;
+use App\Models\Tindakan;
+use App\Models\VitalSign;
+use App\Models\ResepObat;
+use App\Models\Obat;
+
+
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
@@ -55,6 +61,8 @@ class PasienDaftarResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make()
+                    ->label('Lihat Hasil Pemeriksaan')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -66,7 +74,7 @@ class PasienDaftarResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            
         ];
     }
 
@@ -76,6 +84,7 @@ class PasienDaftarResource extends Resource
             'index' => Pages\ListPasienDaftars::route('/'),
             'create' => Pages\CreatePasienDaftar::route('/create'),
             'edit' => Pages\EditPasienDaftar::route('/{record}/edit'),
+            'view' => Pages\ViewPasien::route('/{record}'),
         ];
     }
 }
